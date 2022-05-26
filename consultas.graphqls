@@ -1,0 +1,75 @@
+# Write your query or mutation here
+query findCategories {
+  categories{
+    id
+    name
+    description
+    courses{
+      name
+    }
+  }
+}
+
+
+
+query findCourses {
+  courses{
+    id
+    name
+    description
+    category{
+      name
+    }
+  }
+}
+
+
+# Write your query or mutation here
+mutation createCategory {
+  createCategory(input: {name: "Java", description: "never die"}){
+    id
+    name
+    description
+  }
+}
+
+mutation createCategory {
+  createCategory(input: {name: "GO", description: "isthe future"}){
+    id
+    name
+    description
+  }
+}
+
+
+mutation createCourse {
+  createCourse(input: {
+      name: "Arquiteto de Software", 
+      description: "Foco em AWS"
+      categoryId: "T134020434"
+      }
+      ){
+    id
+    name
+    description
+    category{
+      id
+      name
+    }
+  }
+}
+
+mutation creatChapter {
+  creatChapter(
+    input: {
+      name: "Capitulo 1", 
+      courseId: "T1721070109"
+      }
+      ){
+    id
+    name
+    course{
+      name
+    }
+  }
+}
