@@ -5,12 +5,12 @@ query findCategories {
     name
     description
     courses{
+      id
       name
+      description
     }
   }
 }
-
-
 
 query findCourses {
   courses{
@@ -20,19 +20,15 @@ query findCourses {
     category{
       name
     }
+    chapters{
+      id
+      name
+    }
   }
 }
 
 
 # Write your query or mutation here
-mutation createCategory {
-  createCategory(input: {name: "Java", description: "never die"}){
-    id
-    name
-    description
-  }
-}
-
 mutation createCategory {
   createCategory(input: {name: "GO", description: "isthe future"}){
     id
@@ -40,7 +36,6 @@ mutation createCategory {
     description
   }
 }
-
 
 mutation createCourse {
   createCourse(input: {
@@ -60,10 +55,9 @@ mutation createCourse {
 }
 
 mutation creatChapter {
-  creatChapter(
-    input: {
+  creatChapter(input: {
       name: "Capitulo 1", 
-      courseId: "T1721070109"
+      courseId: "T1597969999"
       }
       ){
     id
